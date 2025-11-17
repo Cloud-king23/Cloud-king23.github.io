@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Harrison Edokpolor | Data Engineer & ML Specialist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.15);
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+      --border: #1e293b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 18px 60px;
+    }
+
+    /* Header / hero */
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px 20px 24px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(15,23,42,0.7));
+      border: 1px solid rgba(148,163,184,0.25);
+      box-shadow: 0 24px 80px rgba(15,23,42,0.9);
+      margin-bottom: 28px;
+    }
+
+    header h1 {
+      font-size: 1.9rem;
+      letter-spacing: 0.02em;
+    }
+
+    header .subtitle {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .tagline {
+      margin-top: 4px;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    .header-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--text-soft);
+      background: rgba(15,23,42,0.7);
+    }
+
+    .chip.highlight {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: #e0f2fe;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+      font-size: 0.9rem;
+    }
+
+    .pill-link {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15,23,42,0.6);
+    }
+
+    .pill-link.main {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: #e0f2fe;
+    }
+
+    .pill-link span.icon {
+      font-size: 1rem;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 26px;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #cbd5f5;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+
+    .card {
+      background: rgba(15,23,42,0.9);
+      border-radius: 16px;
+      border: 1px solid rgba(30,64,175,0.6);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 4px;
+    }
+
+    .card-meta {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: var(--text-main);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--text-soft);
+    }
+
+    /* Columns */
+    .cols {
+      display: grid;
+      gap: 16px;
+    }
+
+    .cols-2 {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    }
+
+    .list-compact li {
+      margin-bottom: 4px;
+      font-size: 0.88rem;
+      color: var(--text-main);
+    }
+
+    .list-compact {
+      padding-left: 16px;
+      margin-top: 4px;
+    }
+
+    footer {
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .cols-2 {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 18px 16px;
+      }
+      .page {
+        padding: 18px 14px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HERO / HEADER -->
+    <header>
+      <div class="header-grid">
+        <div>
+          <h1>Harrison Osasogie Edokpolor</h1>
+          <p class="subtitle">
+            Data Engineer & Machine Learning Specialist · Medical Robotics & Mechatronics Background
+          </p>
+          <p class="tagline">
+            I build data pipelines and ML solutions for real-world signals — from sensors and machining tools
+            to operational datasets in the cloud.
+          </p>
+
+          <div class="chips">
+            <span class="chip highlight">Data Engineering</span>
+            <span class="chip">Microsoft Fabric & Azure</span>
+            <span class="chip">Python & SQL</span>
+            <span class="chip">Time-Series & IoT Data</span>
+            <span class="chip">Medical Robotics & Automation</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact-links">
+            <!-- Replace # with your real URLs -->
+            <a class="pill-link main" href="https://www.linkedin.com/in/your-linkedin-handle" target="_blank">
+              <span class="icon">🔗</span><span>LinkedIn Profile</span>
+            </a>
+            <a class="pill-link" href="mailto:your@email.com">
+              <span class="icon">📧</span><span>Email</span>
+            </a>
+            <a class="pill-link" href="https://github.com/your-github-username" target="_blank">
+              <span class="icon">💻</span><span>GitHub</span>
+            </a>
+            <!-- Optional CV link -->
+            <!-- <a class="pill-link" href="cv.pdf" target="_blank">
+              <span class="icon">📄</span><span>Download CV</span>
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <p class="section-subtitle">
+        Data Engineer with a strong STEM foundation and research experience in Medical Robotics & AI.
+      </p>
+      <div class="card">
+        <p>
+          I am a Data Engineer and ML specialist with a background in <strong>Medical Robotics, Mechatronics
+          and Embedded Systems</strong>, currently working as a <strong>Researcher (PhD in progress)</strong>
+          in Medical Robotics & AI at the University of Bath.
+        </p>
+        <p>
+          I focus on building <strong>end-to-end data pipelines</strong> and analytics solutions using
+          <strong>Python, SQL, Microsoft Fabric and Azure</strong>, especially for <strong>time-series,
+          sensor and operational data</strong>. My goal is to bridge the gap between physical systems
+          (sensors, machines, devices) and modern cloud data platforms to enable better decisions,
+          predictive maintenance and intelligent automation.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="cols cols-2">
+        <div class="card">
+          <h3>Data Engineering & Cloud</h3>
+          <ul class="list-compact">
+            <li>Data Engineering · ETL / ELT · Batch Data Pipelines</li>
+            <li>Microsoft Fabric · Azure Data Platform · Lakehouse / OneLake</li>
+            <li>Data Modelling · Data Warehousing · Data Quality & Validation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Programming, ML & Domain</h3>
+          <ul class="list-compact">
+            <li>Python (Pandas, NumPy, SciPy) · SQL</li>
+            <li>Supervised Machine Learning · Feature Engineering</li>
+            <li>Time-Series & Sensor Data · Predictive Maintenance</li>
+            <li>Medical Robotics · Mechatronics · Embedded Systems</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS / PORTFOLIO -->
+    <section id="projects">
+      <h2 class="section-title">Projects & Portfolio</h2>
+      <p class="section-subtitle">
+        A selection of data engineering, ML and mechatronics projects. As a novice on GitHub, I’m gradually
+        uploading full code and documentation.
+      </p>
+
+      <!-- Project 1 -->
+      <div class="card">
+        <h3>Tool Condition Monitoring Data Pipeline (Python & ML)</h3>
+        <p class="card-meta">
+          Python · Pandas · NumPy · SciPy · scikit-learn · Jupyter · Time-Series · Predictive Maintenance
+        </p>
+        <p>
+          End-to-end data pipeline for high-frequency sensor data from machining tools. Ingests raw vibration/current
+          signals, cleans and pre-processes them, engineers time- and frequency-domain features, and trains supervised
+          models to classify tool-wear states for predictive maintenance.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Python</span>
+          <span class="pill">Time-Series</span>
+          <span class="pill">ML Pipeline</span>
+        </div>
+        <!-- Replace # with your GitHub project link when ready -->
+        <!-- <p><a href="#" target="_blank">View project on GitHub →</a></p> -->
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card">
+        <h3>Microsoft Fabric Lakehouse for Operational Analytics</h3>
+        <p class="card-meta">
+          Microsoft Fabric · Lakehouse / OneLake · SQL · Notebooks · Power BI
+        </p>
+        <p>
+          Lakehouse-style analytics solution using Microsoft Fabric. Raw CSV/structured data are ingested into OneLake,
+          transformed through bronze/silver/gold layers with SQL and notebooks, and exposed to Power BI for interactive
+          dashboards and analysis.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Lakehouse</span>
+          <span class="pill">Fabric</span>
+          <span class="pill">ETL / ELT</span>
+        </div>
+        <!-- <p><a href="#" target="_blank">View project details →</a></p> -->
+      </div>
+
+      <!-- Project 3 -->
+      <div class="card">
+        <h3>Sensor Time-Series ETL Pipeline</h3>
+        <p class="card-meta">
+          Python · Pandas · NumPy · ETL · Experimental Data
+        </p>
+        <p>
+          Reusable ETL workflow for experimental sensor/time-series data. Handles multi-file experiments, aligns and
+          synchronises channels, applies batch transformations and outputs clean tables and plots for analysis and ML.
+        </p>
+        <div class="pill-row">
+          <span class="pill">ETL</span>
+          <span class="pill">Sensor Data</span>
+          <span class="pill">Automation</span>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="card">
+        <h3>Colonoscopy Tool-Tip Design Using Bellows Actuator</h3>
+        <p class="card-meta">
+          MSc Thesis · Medical Robotics · Mechatronics · Automation
+        </p>
+        <p>
+          Design and modelling of a colonoscopy tool-tip actuated by bellows for cancer screening. Combined mechanical
+          design, compliant mechanisms and control considerations for a miniaturised, medical automation system.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Medical Robotics</span>
+          <span class="pill">Mechatronics</span>
+          <span class="pill">Automation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <h3>PhD (in progress) – Medical Robotics & Artificial Intelligence</h3>
+        <p class="card-meta">University of Bath · Bath, United Kingdom</p>
+        <p>
+          Research on self-powered sensors and intelligent monitoring of machining tools, with themes in sensor data,
+          time-series analytics, predictive maintenance and embedded systems.
+        </p>
+      </div>
+      <div class="card">
+        <h3>MSc – Mechatronics and Robotics Engineering (with Automation)</h3>
+        <p class="card-meta">University of Leeds · Leeds, United Kingdom</p>
+        <p>
+          Advanced study in robotics, control engineering, embedded systems, DSP and industrial automation. Thesis on
+          the design of a colonoscopy tool-tip using bellows as an actuator for cancer screening.
+        </p>
+      </div>
+      <div class="card">
+        <h3>BSc – Electrical & Electronics Engineering</h3>
+        <p class="card-meta">[Your University] · [City, Country]</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p>
+          📍 Based in Swindon, United Kingdom<br />
+          💼 Open to Data Engineer / ML Data Engineer roles (UK / remote)<br />
+          📧 Email: <a href="mailto:your@email.com">your@email.com</a><br />
+          🔗 LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin-handle" target="_blank">
+            linkedin.com/in/your-linkedin-handle
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Harrison Osasogie Edokpolor
+    </footer>
+  </div>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
